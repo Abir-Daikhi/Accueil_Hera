@@ -1,7 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using AccueilHera.Data;
+using AccueilHera.Migrations;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -12,6 +10,8 @@ namespace AccueilHera
     {
         protected void Application_Start()
         {
+            //System.Data.Entity.Database.SetInitializer(<>);
+            System.Data.Entity.Database.SetInitializer(new System.Data.Entity.MigrateDatabaseToLatestVersion<MyDBContext, Configuration>());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

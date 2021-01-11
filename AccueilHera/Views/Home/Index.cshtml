@@ -1,31 +1,321 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<AccueilHera.Models.Abonnement>
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    ViewBag.Title = "HERA";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Hera</title>
+    <!-- Font Awesome icons (free version)-->
+    <link href="assets/icofont/icofont.min.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <!-- Third party plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="assets/icofont/icofont.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Hera</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#download">Abonnement</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Templates</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../Login/Login">Connexion</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../Register/Register">Inscription</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-10 align-self-end">
+                    <h1 class="text-uppercase text-white font-weight-bold">Hera</h1>
+                    <hr class="divider my-4" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 font-weight-light mb-5">Quelques clics suffisent pour créer un site e-commerce magnifique avec Hera c'est facile!</p>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Créer votre site e-commerce</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- About section-->
+    <section class="page-section bg-primary" id="about">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mt-0">Choisissez parmi plus de 100 modeles prets à l'emploi</h2>
+                    <hr class="divider light my-4" />
+                    <a class="btn btn-light btn-xl js-scroll-trigger" href="#download">Commencer!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End about section-->
+    <!--Abonnements section-->
+    <section id="download" class="download">
+        <div class="container">
+            <br>
+            <br>
+            <h2 class="text-center mt-0">Abonnement</h2>
+            <hr class="divider my-4" />
+            <br>
+            <!--Select items from model Abonnement-->
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-6">
+                        <div class="box">
+                            <h3>
+                                @Html.DisplayFor(Model => item.Nom_Abonnement) </h3>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+                                <h4><sup>$</sup> @Html.DisplayFor(Model => item.Prix_Abonnement)<span> / mois</span></h4>
+                                <ul>
+                                    <li> @Html.DisplayFor(Model => item.Description_Abonnement)</li>
+                                    @*<li>Nulla at volutpat dola</li>
+                                        <li class="na">Pharetra massa</li>
+                                        <li class="na">Massa ultricies mi</li>*@
+                                </ul>
+                                <div class="btn-wrap">
+                                    <a href="#" class="btn-buy">Acheter</a>
+                                </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+        <br>
+        <br>
+    </section>
+    <!-- End Abonnements section -->
+    <!-- ======= My Portfolio Templates Section ======= -->
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <br>
+            <h2 class="text-center mt-0">Templates personnalisable</h2>
+            <center> <p class="text-white-75 font-weight-light mb-5">Commencez avec des modèles de site web HTML gratuits et libérez votre créativité.</p> </center>
+            <hr class="divider my-4" />
+            <br>
+
+            <ul id="portfolio-flters" class="d-flex justify-content-center">
+                <li data-filter="*" class="filter-active">Tous</li>
+                <li data-filter=".filter-boutique">Boutique en ligne</li>
+                <li data-filter=".filter-restauration">Restauration</li>
+                <li data-filter=".filter-entreprise">Entreprise</li>
+            </ul>
+
+            <div class="row portfolio-container">
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-boutique">
+                    <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Boutique en ligne</h4>
+                        <p>Boutique</p>
+                        <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Plus de détails"><i class="bx bx-plus"></i></a>
+                        <a href="assets/img/portfolio/portfolio-1.jpg" class="details-link" title="Télécharger"><i class="bx bx-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-entreprise">
+                    <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Entreprise</h4>
+                        <p>Entreprise</p>
+                        <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Plus de détails"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Télécharger"><i class="bx bx-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-boutique">
+                    <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Boutique en ligne</h4>
+                        <p>Boutique</p>
+                        <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Plus de détails"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Télécharger"><i class="bx bx-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-restauration">
+                    <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Restauration</h4>
+                        <p>Restauration</p>
+                        <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Plus de détails"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Télécharger"><i class="bx bx-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-entreprise">
+                    <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Entreprise</h4>
+                        <p>Entreprise</p>
+                        <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Plus de détails"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Télécharger"><i class="bx bx-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-boutique">
+                    <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Boutique en ligne</h4>
+                        <p>Boutique</p>
+                        <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Plus de détails"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Télécharger"><i class="bx bx-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-restauration">
+                    <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Restauration</h4>
+                        <p>Restauration</p>
+                        <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Plus de détails"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Télécharger"><i class="bx bx-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-restauration">
+                    <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Restauration</h4>
+                        <p>Restauration</p>
+                        <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Plus de détails"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Télécharger"><i class="bx bx-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Entreprise</h4>
+                        <p>Entreprise</p>
+                        <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Plus de détails"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Télécharger"><i class="bx bx-download"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End My Portfolio Templates Section -->
+    <!--Contact section-->
+    <section class="contact" id="contact">
+        <div class="container text-center">
+
+            <div class="section-title">
+                <h2 class="mb-4">Contactez-nous</h2><br><br>
+            </div>
+
+            <div class="row" data-aos="fade-in">
+
+
+                <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="name">Votre nom</label>
+                                <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="name">Votre adresse email</label>
+                                <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                                <div class="validate"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Objet</label>
+                            <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Votre message</label>
+                            <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="robot">
+                            <label for="robot">Je ne suis pas un robot</label>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="loading">Chargement</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Votre message a bien été envoyé merci!!</div>
+                        </div>
+                        <div class="text-center"><button class="btn btn-primary btn-xl js-scroll-trigger" type="submit">Envoyer</button></div>
+                    </form>
+                </div>
+                <div class="col-lg-5 d-flex align-items-stretch">
+                    <div class="contact">
+                        <div class="info">
+                            <div class="address">
+                                <i class="icofont-google-map"></i>
+                                <h4>Localisation:</h4>
+                                <p>22 avenue Paris 94600 Choisy-le-Roi</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="icofont-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>hera@ecommerce.fr</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="icofont-phone"></i>
+                                <h4>Appelez:</h4>
+                                <p>+33 625 097 985</p>
+                            </div>
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d673334.7595495177!2d2.2796122!3d48.7587113!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2a8af310acaaedae!2sCOBAHT!5e0!3m2!1sfr!2stn!4v1587572458659!5m2!1sfr!2stn" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End contact section-->
+    <!-- Footer-->
+    <footer>
+        <center><p>Copyright &copy; @DateTime.Now.Year - Application réalisée par <a href="http://www.future-eye-inc.com/">Future Eye</a></p></center>
+    </footer>
+    <!--End footer-->
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
